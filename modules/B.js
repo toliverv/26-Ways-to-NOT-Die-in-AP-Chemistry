@@ -1,15 +1,15 @@
 import { Assets } from './Assets.js';
 import { GameObject } from './GameObject.js';
 
-export class A {
+export class B {
     constructor() {
         this.result = new Promise((resolve, reject) => {
             this.win = resolve;
             this.lose = reject;
         });
 
-        this.prompt = 'A is for ACID';
-        this.subtitle = 'Create a diluted HCl (red) solution';
+        this.prompt = 'B is for BASES';
+        this.subtitle = 'Create a diluted NaOH (pink) solution';
 
         const guy = new GameObject(Assets['guy'], 5, 0);
         const waterBeaker = new GameObject(
@@ -17,13 +17,11 @@ export class A {
             27,
             34,
             () => {
-                this.lose(
-                    "Don't even think of handling chemicals without goggles"
-                );
+                this.lose('Really?');
             }
         );
-        const acidBeaker = new GameObject(
-            Assets['beaker_acid'],
+        const baseBeaker = new GameObject(
+            Assets['beaker_base'],
             36,
             34,
             waterBeaker.onclick
@@ -34,9 +32,9 @@ export class A {
             goggles.y = 25;
             goggles.clickable = false;
 
-            acidBeaker.onclick = () => {
+            baseBeaker.onclick = () => {
                 this.lose(
-                    'Mix acids with water to dilute them, not the other way around!'
+                    'Mix bases with water to dilute them, not the other way around!'
                 );
             };
 
@@ -46,7 +44,7 @@ export class A {
                 waterBeaker.y = 14;
                 waterBeaker.clickable = false;
 
-                acidBeaker.clickable = false;
+                baseBeaker.clickable = false;
 
                 flask.clickable = true;
                 flask.onclick = () => {
@@ -56,13 +54,13 @@ export class A {
                     waterBeaker.x = 27;
                     waterBeaker.y = 34;
 
-                    acidBeaker.clickable = true;
-                    acidBeaker.onclick = () => {
-                        acidBeaker.x = 20;
-                        acidBeaker.y = 14;
+                    baseBeaker.clickable = true;
+                    baseBeaker.onclick = () => {
+                        baseBeaker.x = 20;
+                        baseBeaker.y = 14;
 
                         flask.onclick = () => {
-                            acidBeaker.img = Assets['beaker_empty'];
+                            baseBeaker.img = Assets['beaker_empty'];
                             this.win(
                                 'Correct. Always add water into the solution first!'
                             );
@@ -84,7 +82,7 @@ export class A {
         this.objects = [
             guy,
             waterBeaker,
-            acidBeaker,
+            baseBeaker,
             flask,
             goggles,
             new GameObject(Assets['table'], 45, 0),

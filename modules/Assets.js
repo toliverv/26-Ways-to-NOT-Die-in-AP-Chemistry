@@ -1,4 +1,19 @@
-const filenames = ['guy'];
+const filenames = [
+    'beaker_acid',
+    'beaker_base',
+    'beaker_empty',
+    'beaker_water',
+    'fire_extinguisher',
+    'flask_acid',
+    'flask_empty',
+    'flask_fire',
+    'flask_water',
+    'goggles',
+    'guy_hold',
+    'guy',
+    'shelf',
+    'table',
+];
 export const imagesLoaded = [];
 export const Assets = filenames.reduce((obj, file) => {
     const img = new Image();

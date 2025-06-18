@@ -1,6 +1,4 @@
 import { A } from './A.js';
+import { B } from './B.js';
 
-/**
- * @type {LevelInfo[]}
- */
-export const Levels = [A];
+export const Levels = [A, B];
