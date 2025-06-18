@@ -10,7 +10,7 @@ canvas.height = 480;
 const ctx = canvas.getContext('2d');
 ctx.imageSmoothingEnabled = false;
 
-let page = 1,
+let page = 0,
     evilMode = false;
 
 /**
