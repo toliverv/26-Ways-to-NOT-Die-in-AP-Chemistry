@@ -25,6 +25,6 @@ export const Assets = filenames.reduce((obj, file) => {
     });
     imagesLoaded.push(loaded);
 
-    img.src = `../assets/${file}.png`;
+    img.src = `./${file}.png`;
     return obj;
 }, {});
